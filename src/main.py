@@ -1,7 +1,8 @@
 import pandas as pd
+from StaticList import StaticList
 
 def readData():
-    airbnb = pd.read_csv('../data/airbnb.csv').to_dict()
+    airbnb = pd.read_csv('../data/airbnb-all-elements.csv').to_dict()
 
     matrix = []
     for i in airbnb:
@@ -9,23 +10,32 @@ def readData():
         matrix.append(listValues)
 
     allKeys = list(airbnb.keys())
-    myDict = {} 
+    myList = [] 
     counter = 0
     while counter < len(matrix[0]):
         tempList = {} 
-        j = 0
         for i in range(len(matrix)):
-            if j != 0:
-                tempList[allKeys[i]] = matrix[i][counter]
-            j += 1
+            tempList[allKeys[i]] = matrix[i][counter]
 
-        myDict[matrix[0][counter]] = tempList
+        myList.append(tempList)
         counter += 1
         
-    return myDict
+    return myList 
 
         
 if __name__ == "__main__":
-    myDict = readData()
-    for i in myDict:
-        print(i, myDict[i])
+    airbnbList = readData()
+
+    myStaticList = StaticList()
+
+    print("Antes")
+    print(myStaticList.myList)
+    print(myStaticList.limit)
+    print(myStaticList.size)
+
+    for i in range(myStaticList.limit):
+        myStaticList.insert(airbnbList[i])
+
+    print("Depois")
+    print(myStaticList.myList)
+    print(myStaticList.size)
