@@ -20,9 +20,3 @@ if __name__ == "__main__":
     print(myStaticList.binarySearch(2539))
     #myStaticList.tam()
 
-
-    
-    
-  
-
-
