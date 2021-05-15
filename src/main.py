@@ -8,6 +8,7 @@ if __name__ == "__main__":
     myStaticList = StaticList()
     # [1, 2, 3, 4]
     # myStaticList.myList = airbnbList
+    
     for i in range(myStaticList.limit):
         myStaticList.insertOrdered(airbnbList[i])
 
