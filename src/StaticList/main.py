@@ -1,8 +1,12 @@
 from StaticList import StaticList
-import helpers
+import os, sys
+currentdir = os.path.dirname(os.path.realpath(__file__))
+parentdir = os.path.dirname(currentdir)
+sys.path.append(parentdir)
+
+from helpers import readData
 
 if __name__ == "__main__":
-    readData = helpers.readData 
     airbnbList = readData()
     myStaticList = StaticList()
     # [1, 2, 3, 4]
