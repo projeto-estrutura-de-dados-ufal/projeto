@@ -1,9 +1,8 @@
 from StaticList import StaticList
-from readData import readData
-
+import helpers
 
 if __name__ == "__main__":
-    
+    readData = helpers.readData 
     airbnbList = readData()
     myStaticList = StaticList()
     # [1, 2, 3, 4]
