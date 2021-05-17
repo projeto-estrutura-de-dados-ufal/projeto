@@ -1,8 +1,7 @@
 import pandas as pd
-from env import env
 
-def readData():
-    airbnb = pd.read_csv(env['path']).to_dict()
+def readData(path):
+    airbnb = pd.read_csv(path).to_dict()
 
     matrix = []
     for i in airbnb:

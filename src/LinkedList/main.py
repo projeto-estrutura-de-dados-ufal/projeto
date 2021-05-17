@@ -5,10 +5,11 @@ parentdir = os.path.dirname(currentdir)
 sys.path.append(parentdir)
 
 from helpers import readData
+from env import env
 
 if __name__ == "__main__":
     
-    airbnbList = readData()
+    airbnbList = readData(env['path_airbnb'])
     myLinkedList = LinkedList()
 
     size = 3

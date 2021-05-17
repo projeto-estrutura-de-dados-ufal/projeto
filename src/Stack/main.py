@@ -3,14 +3,14 @@ import os, sys
 currentdir = os.path.dirname(os.path.realpath(__file__))
 parentdir = os.path.dirname(currentdir)
 sys.path.append(parentdir)
-from helpers import readData
-
 
 from helpers import readData
+
+from env import env
 
 if __name__ == "__main__":
     
-    airbnbList = readData()
+    airbnbList = readData(env['path_airbnb'])
     myStack = Stack()
     # [1, 2, 3, 4]
     # myStack.myList = airbnbList
@@ -20,7 +20,7 @@ if __name__ == "__main__":
     
  
     myStack.search(5022)
-    #myStack.show()
+    myStack.show()
     #myStack.tam()
     #myStack.remove()
 

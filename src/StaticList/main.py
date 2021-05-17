@@ -4,10 +4,11 @@ currentdir = os.path.dirname(os.path.realpath(__file__))
 parentdir = os.path.dirname(currentdir)
 sys.path.append(parentdir)
 
+from env import env
 from helpers import readData
 
 if __name__ == "__main__":
-    airbnbList = readData()
+    airbnbList = readData(env['path_airbnb'])
     myStaticList = StaticList()
     # [1, 2, 3, 4]
     # myStaticList.myList = airbnbList
