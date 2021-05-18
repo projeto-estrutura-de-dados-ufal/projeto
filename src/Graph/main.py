@@ -5,10 +5,10 @@ currentdir = os.path.dirname(os.path.realpath(__file__))
 parentdir = os.path.dirname(currentdir)
 sys.path.append(parentdir)
 
-from helpers import readData
+from env import env
 
 if __name__ == "__main__":
-    heroCsv = pd.read_csv('../../data/hero-network.csv')
+    heroCsv = pd.read_csv(env['path_marvel'])
 
     hero1 = heroCsv["hero1"]
     hero2 = heroCsv["hero2"]

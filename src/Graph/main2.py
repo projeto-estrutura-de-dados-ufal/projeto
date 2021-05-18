@@ -1,8 +1,15 @@
 from Graph import Graph
 import pandas as pd
 
+import os, sys
+currentdir = os.path.dirname(os.path.realpath(__file__))
+parentdir = os.path.dirname(currentdir)
+sys.path.append(parentdir)
+
+from env import env
+
 if __name__ == "__main__":
-    hero = pd.read_csv('../../data/hero-network.csv')
+    hero = pd.read_csv(env['path_marvel'])
 
     hero1 = hero["hero1"]
     hero2 = hero["hero2"]
