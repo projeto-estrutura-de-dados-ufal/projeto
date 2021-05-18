@@ -8,64 +8,32 @@ sys.path.append(parentdir)
 from helpers import readData
 
 if __name__ == "__main__":
-    heroi = pd.read_csv('../../data/hero-network.csv')
+    heroCsv = pd.read_csv('../../data/hero-network.csv')
 
-    heroi1 = heroi["hero1"]
-    heroi2 = heroi["hero2"]
+    hero1 = heroCsv["hero1"]
+    hero2 = heroCsv["hero2"]
 
 
-    size = 10
-    herois = []
+    size = 8 
+    heroes = []
     for i in range(size):
-        # print(heroi1[i], " --> ", heroi2[i])
-        if (heroi1[i] not in herois):
-            herois.append(heroi1[i])
+        # print(hero1[i], " --> ", hero2[i])
+        if (hero1[i] not in heroes):
+            heroes.append(hero1[i])
 
     for j in range(size):
-        if (heroi2[j] not in herois):
-            herois.append(heroi2[j])
+        if (hero2[j] not in heroes):
+            heroes.append(hero2[j])
 
-        
-    myGraph = Graph(size)
-    for i in herois:
-        myGraph.add_node(i)
+    myGraph = Graph()
 
-    print("\n\n\n")
-    myGraph.print_nodes()
-
-    for i in range(size):
-        v1 = myGraph.get_index(heroi1[i])
-        v2 = myGraph.get_index(heroi2[i])
-        myGraph.add_edge(v1, v2)
+    for hero in heroes:
+        myGraph.addNode(hero)
     
-    print("\n\n\n")
-    myGraph.print_graph()
-    # myGraph.remove_node("LITTLE, ABNER")
-    myGraph.add_node("capitao, brazuca")
-    myIndex = myGraph.get_index("capitao, brazuca")
-    myGraph.add_edge(myIndex,0)
-    myGraph.print_graph()
+    for hero in range(size):
+        # print(hero1[hero], hero2[hero])
+        myGraph.addEdge(hero1[hero], hero2[hero])
 
-
-
-
-
-#[cap america][homem de ferro]=1
-#matrix[Littleabner][0] = princess zanda
-#matrix[Littleabner][1] = pantera negra
-
-#                 littleabner | princess | pantera
-# littleabner |        0           1          1
-# princess    |
-# pantera     |
-
-
-
-
-#para não ler repetidos é possivel utilizar o  "if i not in heroi :   herois[]"
-
-
-
-
-
-
+    myGraph.showGraph()
+    myGraph.removeNode(heroes[len(heroes) - 1])
+    myGraph.showGraph()
