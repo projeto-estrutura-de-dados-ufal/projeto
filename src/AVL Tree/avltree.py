@@ -74,6 +74,25 @@ class Node:
             else:
                 self.right.insert(data)
         self.ExecuteBalance()
+    
+    def search(self, id):
+        current = self 
+        parent = None
+
+        while (current != None):
+            if (current.data['id'] == id):
+                return (parent, current)
+            
+            parent = current
+
+            if (id < current.data['id']):
+                current = current.left
+            else:
+                current = current.right
+        
+        return None
+
+   
 
     def PrintTree(self):
         print(self.data['id'], end='')
@@ -82,4 +101,4 @@ class Node:
             self.left.PrintTree()
         if self.right:
             self.right.PrintTree()
-        print(")",end='')
+        print(") ",end='')
