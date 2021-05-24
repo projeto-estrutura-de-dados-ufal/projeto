@@ -92,7 +92,42 @@ class Node:
         
         return None
 
-   
+    def remove(self, id):
+        p = None
+        q = None
+        searchResult = self.search(id)
+        myNode = searchResult[1]
+        parent = searchResult[0]
+        
+        if (myNode == None):
+            return
+        if (myNode.left == None or myNode.right == None):
+            if (myNode.left == None):
+                q = myNode.right
+            else:
+                q = myNode.left
+        else:
+            p = myNode
+            q = myNode.left
+            while(q.left != None):
+                p = q
+                q = q.right
+            if (p != myNode):
+                p.right = q.left
+                q.left = myNode.left
+            q.right = myNode.right
+        if (not parent):
+            self.data = q.data
+            self.left = q.left
+            self.right = q.right
+            self.ExecuteBalance()
+            return
+
+        if (id < parent.data["id"]):
+            parent.left = q
+        else:
+            parent.right = q
+        self.ExecuteBalance()
 
     def PrintTree(self):
         print(self.data['id'], end='')
