@@ -14,7 +14,7 @@ if __name__ == "__main__":
     hero2 = heroCsv["hero2"]
 
 
-    size = 4 
+    size = 20
     heroes = []
     for i in range(size):
         # print(hero1[i], " --> ", hero2[i])
@@ -34,6 +34,8 @@ if __name__ == "__main__":
         # print(hero1[hero], hero2[hero])
         myGraph.addEdge(hero1[hero], hero2[hero])
 
-    myGraph.showGraph()
-    myGraph.removeNode(heroes[len(heroes) - 1])
-    myGraph.showGraph()
+    myGraph.showNodes()
+    print('\n\n\n')
+
+    resultDijkstra = myGraph.dijkstra("STEELE, SIMON/WOLFGA")
+    print("Dijkstra:", resultDijkstra)
