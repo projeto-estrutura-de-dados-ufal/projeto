@@ -12,7 +12,7 @@ if __name__ == "__main__":
     airbnbList = readData(env['path_airbnb'])
     myLinkedList = LinkedList()
 
-    size = 3
+    size = 100
     for i in range(size):
         myLinkedList.insert(airbnbList[i])
     

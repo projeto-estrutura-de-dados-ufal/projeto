@@ -1,7 +1,7 @@
 class Stack:
     def __init__(self):
         self.myList = []
-        self.limit = 10
+        self.limit = 100
         self.size = 0
     
     def insert(self,item):

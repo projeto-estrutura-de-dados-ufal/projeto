@@ -14,7 +14,7 @@ if __name__ == "__main__":
     hero2 = heroCsv["hero2"]
 
 
-    size = 100
+    size = 4 
     heroes = []
     for i in range(size):
         # print(hero1[i], " --> ", hero2[i])
@@ -37,5 +37,3 @@ if __name__ == "__main__":
     myGraph.showGraph()
     myGraph.removeNode(heroes[len(heroes) - 1])
     myGraph.showGraph()
-    resultDijkstra =myGraph.dijkstra(heroes[0])
-    print("Dijkstra:",resultDijkstra)

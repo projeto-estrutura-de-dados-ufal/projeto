@@ -1,6 +1,6 @@
 class StaticList:
     def __init__(self):
-        self.limit = 10
+        self.limit = 100 
         self.myList = []
         self.size = 0
 

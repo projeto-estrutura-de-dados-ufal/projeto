@@ -2,7 +2,7 @@ class Fila:
     
     def __init__(self):
         self.fila = []
-        self.limit=10 
+        self.limit=100
         self.size = 0  
         
     def insert(self,value):
