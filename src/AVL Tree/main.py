@@ -15,9 +15,13 @@ if __name__ == "__main__":
         myTree.insert(airbnbList[i])
             
 
-    myTree.remove(2539)
-    myTree.remove(3647)
+    myTree.remove(airbnbList[5]['id'])
+    myTree.remove(airbnbList[4]['id'])
     myTree.PrintTree()
+    print("\n\n")
+    print(myTree.data)
+    print(myTree.left.data)
+    print(myTree.right.data)
     print('\n')
     
 """

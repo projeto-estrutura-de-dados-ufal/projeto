@@ -51,7 +51,7 @@ class Node:
             if self.left.balance() > 0:
                 self.RotationRight()
             else:
-                self.RotationLeftright()
+                self.RotationLeftRight()
         elif bal < -1:
             if self.right.balance() < 0:
                 self.RotationLeft()

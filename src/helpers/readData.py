@@ -1,7 +1,9 @@
 import pandas as pd
+import random
 
 def readData(path):
     airbnb = pd.read_csv(path).to_dict()
+
 
     matrix = []
     for i in airbnb:
@@ -19,4 +21,12 @@ def readData(path):
         myList.append(tempList)
         counter += 1
         
-    return myList 
+    hundredElements =[]
+    for i in range(100):
+        element = random.choice(myList)
+        while (element in hundredElements):
+            element = random.choice(myList)
+
+        hundredElements.append(element) 
+
+    return hundredElements 
