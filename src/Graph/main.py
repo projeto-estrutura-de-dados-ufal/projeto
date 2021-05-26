@@ -1,4 +1,5 @@
 from Graph import Graph
+
 import pandas as pd
 import os, sys
 currentdir = os.path.dirname(os.path.realpath(__file__))
@@ -6,12 +7,13 @@ parentdir = os.path.dirname(currentdir)
 sys.path.append(parentdir)
 
 from env import env
+from helpers import readMarvel
 
 if __name__ == "__main__":
-    heroCsv = pd.read_csv(env['path_marvel'])
+    hero = readMarvel(env['path_marvel'])
 
-    hero1 = heroCsv["hero1"]
-    hero2 = heroCsv["hero2"]
+    hero1 = hero["hero1"]
+    hero2 = hero["hero2"]
 
 
     size = 100
