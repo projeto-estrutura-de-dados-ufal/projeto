@@ -59,6 +59,11 @@ class Graph:
         self.edges -= 1
         return True
     
+    def search(self,id):
+        if id in self.matrix :
+            print(self.matrix[id])
+            return self.matrix[id]
+            
     def show(self):
         for line in self.matrix:
             print(line, self.matrix[line])
